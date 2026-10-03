@@ -1,0 +1,14 @@
+/* Privacy and terms pages. Same navy, blue and type as the home page. */
+:root { --ink: #0F172A; --muted: #475569; --brand: #0A58FF; --navy: #08132E; --rule: #E2E8F0; --bg: #F8FAFC; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 'Inter', system-ui, sans-serif; padding: 48px 16px 72px; }
+main { max-width: 680px; margin: 0 auto; background: #fff; border: 1px solid var(--rule); border-radius: 24px; padding: 32px clamp(20px, 5vw, 48px) 40px; }
+h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: clamp(32px, 6vw, 42px); letter-spacing: -0.03em; line-height: 1; margin: 18px 0 6px; }
+h2 { font-size: 17px; font-weight: 700; margin: 32px 0 6px; scroll-margin-top: 24px; }
+p, li { color: var(--muted); }
+ul { padding-left: 20px; }
+.meta { font-size: 13px; margin-top: 0; }
+.back { color: var(--brand); font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; padding: 10px 0; }
+.back:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.nowrap { white-space: nowrap; }

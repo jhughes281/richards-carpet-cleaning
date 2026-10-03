@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Richard's Carpet Cleaning & Upholstery | Truck-Mount Steam Cleaning</title>
+<meta name="description" content="Truck-mount steam cleaning for carpet, upholstery and tile. See your price instantly and book online.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script>
+tailwind.config={
+  theme:{
+    extend:{
+      fontFamily:{sans:['Inter','sans-serif'], display:['Fraunces','serif']},
+      colors:{
+        brand:{DEFAULT:'#0A58FF', dark:'#083CC0', light:'#EFF4FF', faint:'#F8FAFF'},
+        navy:'#08132E',
+        ink:'#0F172A'
+      },
+      boxShadow:{'soft':'0 12px 40px rgba(10,88,255,0.12)', 'card':'0 8px 30px rgba(15,23,42,0.08)'}
+    }
+  }
+}
+</script>
+<style>
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+[hidden]{display:none!important}
+[aria-invalid="true"]{border-color:#fca5a5!important;box-shadow:0 0 0 3px #fee2e2}
+[aria-pressed="true"]{outline:3px solid #fbbf24;outline-offset:2px}
+body{font-family:'Inter',sans-serif;color:#0F172A}
+.display{font-family:'Fraunces',serif;letter-spacing:-0.03em;line-height:0.95}
+.no-scrollbar::-webkit-scrollbar{display:none}
+input[type="range"]{accent-color:#0A58FF}
+</style>
+</head>
+<body class="bg-white antialiased">
+<!-- Top Bar -->
+<div class="bg-navy text-white text-[12px] md:text-[13px] font-medium">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-6 py-2.5 flex flex-wrap items-center justify-between gap-2">
+    <div class="flex items-center gap-3 md:gap-5">
+      <span class="flex items-center gap-1.5"><i class="fa-solid fa-truck text-blue-400"></i> Truck-Mount Steam Cleaning</span>
+      <span class="hidden md:inline w-px h-4 bg-white/20"></span>
+      <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-blue-400"></i> Serving Greater Metro & Surrounding Counties</span>
+    </div>
+    <div class="flex items-center gap-3 md:gap-4">
+      <a href="tel:5552348765" class="flex items-center gap-2 hover:text-blue-300 transition"><i class="fa-solid fa-phone"></i> (555) 234-8765</a>
+      <span class="hidden sm:inline bg-[#1E3A8A] px-3 py-1 rounded-full text-xs font-bold">Mon-Sat 7am-7pm • Emergency Calls OK</span>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header id="header" class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-100">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-6 h-[72px] flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-3">
+      <div class="w-11 h-11 bg-brand rounded-xl flex items-center justify-center text-white font-black text-xl leading-none">R</div>
+      <div class="leading-none">
+        <div class="font-black text-[17px] tracking-tight">RICHARD'S</div>
+        <div class="text-[11px] font-bold tracking-[0.14em] text-brand -mt-0.5">CARPET CLEANING</div>
+        <div class="text-[10px] font-semibold tracking-[0.12em] text-slate-500 -mt-0.5">& UPHOLSTERY</div>
+      </div>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-[14px] font-semibold">
+      <a href="#home" class="text-brand border-b-2 border-brand pb-1">Home</a>
+      <a href="#services" class="hover:text-brand transition">Services</a>
+      <a href="#equipment" class="hover:text-brand transition">Our Equipment</a>
+      <a href="#pricing" class="hover:text-brand transition">Pricing</a>
+            <a href="#contact" class="hover:text-brand transition">Contact</a>
+    </nav>
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="tel:5552348765" aria-label="Call (555) 234-8765" class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50"><i class="fa-solid fa-phone text-slate-700 text-sm"></i></a>
+      <a href="#contact" class="bg-brand hover:bg-brand-dark text-white font-bold text-sm px-6 py-3 rounded-full shadow-soft transition">Book Online <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+    </div>
+    <button id="menuBtn" type="button" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false" class="lg:hidden w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-100 bg-white absolute w-full shadow-card">
+    <div class="px-4 py-6 space-y-4">
+      <a href="#home" class="block font-bold">Home</a>
+      <a href="#services" class="block font-semibold text-slate-600">Services</a>
+      <a href="#equipment" class="block font-semibold text-slate-600">Our Equipment</a>
+      <a href="#pricing" class="block font-semibold text-slate-600">Pricing</a>
+            <a href="#contact" class="block bg-brand text-white text-center font-bold py-3 rounded-full">Book Free Estimate</a>
+      <a href="tel:5552348765" class="block border text-center font-bold py-3 rounded-full"><i class="fa-solid fa-phone mr-2"></i> (555) 234-8765</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="home" class="bg-[#F8FAFC] overflow-hidden relative">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-6 pt-8 lg:pt-12 pb-12 lg:pb-0">
+    <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-10 items-center">
+      <!-- Left -->
+      <div class="pt-2">
+        <div class="inline-flex items-center gap-2 bg-white border border-blue-100 rounded-full pl-1 pr-3 py-1 text-xs font-bold shadow-sm">
+          <span class="bg-brand text-white px-3 py-1 rounded-full text-[11px] flex items-center gap-1.5"><i class="fa-solid fa-bolt"></i> TRUCK-MOUNT POWER</span>
+          <span class="text-slate-600 hidden sm:inline">Same-Day Appointments Available</span>
+        </div>
+        <h1 class="display text-[38px] sm:text-[48px] lg:text-[56px] font-black text-ink mt-5">
+          Carpets So Clean,<br>
+          <span class="text-brand">You'll Think<br>They're New.</span>
+        </h1>
+        <p class="text-slate-600 text-[16px] lg:text-[17px] leading-relaxed mt-4 max-w-[560px]">
+          Richard's brings <span class="font-bold text-ink">pro-grade 220°F truck-mount steam</span> to your door. We lift years of dirt, allergens & pet stains in one pass — no soapy residue, dry in hours.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a href="#contact" class="bg-brand hover:bg-brand-dark text-white font-extrabold px-7 py-4 rounded-full shadow-soft flex items-center gap-2 transition">Get My Free Quote <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="tel:5552348765" class="bg-white border border-slate-200 hover:border-slate-300 font-bold px-6 py-4 rounded-full flex items-center gap-2"><span class="w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center text-sm"><i class="fa-solid fa-phone"></i></span> (555) 234-8765</a>
+        </div>
+        <div class="grid grid-cols-3 gap-4 mt-8 max-w-[520px]">
+          <div class="bg-white rounded-2xl p-4 border border-slate-100 text-center">
+            <div class="w-9 h-9 bg-brand-light rounded-full flex items-center justify-center mx-auto text-brand"><i class="fa-solid fa-shield-halved text-sm"></i></div>
+            <div class="font-extrabold text-xs mt-2">Re-Clean Guarantee</div>
+            <div class="text-[11px] text-slate-500">Not happy? We come back</div>
+          </div>
+          <div class="bg-white rounded-2xl p-4 border border-slate-100 text-center">
+            <div class="w-9 h-9 bg-emerald-50 rounded-full flex items-center justify-center mx-auto text-emerald-600"><i class="fa-solid fa-leaf text-sm"></i></div>
+            <div class="font-extrabold text-xs mt-2">Eco-Friendly</div>
+            <div class="text-[11px] text-slate-500">Kid & Pet Safe</div>
+          </div>
+          <div class="bg-white rounded-2xl p-4 border border-slate-100 text-center">
+            <div class="w-9 h-9 bg-amber-50 rounded-full flex items-center justify-center mx-auto text-amber-600"><i class="fa-solid fa-clock text-sm"></i></div>
+            <div class="font-extrabold text-xs mt-2">Dry in 2-4 Hours</div>
+            <div class="text-[11px] text-slate-500">Not 2 Days</div>
+          </div>
+        </div>
+      </div>
+      <!-- Right Image -->
+      <div class="relative lg:pb-10">
+        <div class="relative bg-white rounded-[28px] p-3 shadow-[0_24px_64px_rgba(15,23,42,0.16)] border border-slate-100">
+          <div class="relative rounded-[20px] overflow-hidden bg-[#EAF0FF]">
+            <img src="images/truck-mount-unit.jpg" width="830" height="824" alt="Richard's Professional Truck-Mount Carpet Cleaning Machine - Blue Kohler Powered Unit" class="w-full h-[380px] sm:h-[460px] object-cover object-center">
+            <div class="absolute inset-0 ring-1 ring-black/5 rounded-[20px] pointer-events-none"></div>
+            <div class="absolute top-4 right-4 bg-brand text-white text-xs font-black px-3 py-2 rounded-full shadow-md">500 PSI • 220°F STEAM</div>
+            <!-- Bottom Spec -->
+            <div class="absolute bottom-3 left-3 right-3 bg-navy/95 backdrop-blur text-white rounded-2xl p-3 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-brand rounded-xl flex items-center justify-center"><i class="fa-solid fa-gauge-high"></i></div>
+                <div>
+                  <div class="text-xs font-bold opacity-80">KOHLER COMMAND PRO</div>
+                  <div class="text-sm font-extrabold leading-none">14HP Commercial Engine</div>
+                </div>
+              </div>
+              <div class="hidden sm:block text-right">
+                <div class="text-[11px] font-bold opacity-60">VACUUM LIFT</div>
+                <div class="text-sm font-black">27" Hg Power</div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -top-2 -right-2 sm:right-[-12px] bg-amber-400 text-navy rounded-2xl px-4 py-3 shadow-xl rotate-[1deg]">
+            <div class="text-[11px] font-black tracking-widest">FIRST ROOM</div>
+            <div class="text-2xl font-black leading-none"><span data-price="room_first">$79</span><span class="text-sm font-bold"> +<span data-price="room_additional">$20</span>/room</span></div>
+          </div>
+        </div>
+        <div class="hidden lg:flex items-center gap-2 mt-8 justify-center text-xs font-bold text-slate-500">
+          <i class="fa-solid fa-truck-fast text-brand"></i> Fully self-contained • No water/electric needed from your home
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-14 lg:py-20">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-6">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 text-brand font-black text-xs tracking-widest"><span class="w-8 h-px bg-brand"></span> WHAT WE DO BEST</div>
+        <h2 class="display text-[32px] lg:text-[42px] font-black mt-2">Full-Service Clean.<br><span class="text-slate-400">Zero Shortcuts.</span></h2>
+      </div>
+      <p class="max-w-[520px] text-slate-600">Everything your floors and furniture need — powered by our truck-mount beast and finished by certified technicians.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+      <!-- Card -->
+      <div class="group bg-white border border-slate-100 rounded-[24px] p-6 hover:shadow-card hover:border-blue-100 transition">
+        <div class="w-12 h-12 bg-brand-light rounded-2xl flex items-center justify-center text-brand text-lg group-hover:bg-brand group-hover:text-white transition"><i class="fa-solid fa-rug"></i></div>
+        <h3 class="font-extrabold text-[17px] mt-4">Carpet Steam Cleaning</h3>
+        <p class="text-sm text-slate-600 mt-2 leading-relaxed">220°F truck-mount extraction. Removes ground-in dirt, dust mites & allergens. Dry in 2-4 hrs.</p>
+        <ul class="mt-4 space-y-1.5 text-sm font-semibold text-slate-700">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-brand text-xs mt-1"></i> Pre-spray + agitation + extraction</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-brand text-xs mt-1"></i> Deodorizer included</li>
+        </ul>
+        <a href="#contact" class="inline-flex items-center gap-2 text-brand font-extrabold text-sm mt-4">3 rooms for <span data-price-rooms="3">$119</span> <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </div>
+      <div class="group bg-white border border-slate-100 rounded-[24px] p-6 hover:shadow-card hover:border-blue-100 transition">
+        <div class="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600 text-lg"><i class="fa-solid fa-couch"></i></div>
+        <h3 class="font-extrabold text-[17px] mt-4">Upholstery & Sofas</h3>
+        <p class="text-sm text-slate-600 mt-2 leading-relaxed">Hand-detailed cleaning for sofas, sectionals, dining chairs & mattresses. Revives color & texture.</p>
+        <ul class="mt-4 space-y-1.5 text-sm font-semibold text-slate-700">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-amber-500 text-xs mt-1"></i> Safe for microfiber, linen, velvet</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-amber-500 text-xs mt-1"></i> Stain guard optional</li>
+        </ul>
+        <a href="#contact" class="inline-flex items-center gap-2 text-brand font-extrabold text-sm mt-4"><span data-price="addon_sofa">$79</span> per sofa <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </div>
+      <div class="group bg-white border border-slate-100 rounded-[24px] p-6 hover:shadow-card hover:border-blue-100 transition">
+        <div class="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 text-lg"><i class="fa-solid fa-table-cells-large"></i></div>
+        <h3 class="font-extrabold text-[17px] mt-4">Tile, Grout & Hard Floors</h3>
+        <p class="text-sm text-slate-600 mt-2 leading-relaxed">High-pressure spin + extraction makes grout lines light again. No harsh acids.</p>
+        <ul class="mt-4 space-y-1.5 text-sm font-semibold text-slate-700">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs mt-1"></i> Sealing available</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs mt-1"></i> Showers & kitchens too</li>
+        </ul>
+        <a href="#contact" class="inline-flex items-center gap-2 text-brand font-extrabold text-sm mt-4"><span data-price="tile_sqft">$0.75</span>/sq ft <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </div>
+      <div class="group bg-white border border-slate-100 rounded-[24px] p-6 hover:shadow-card hover:border-blue-100 transition">
+        <div class="w-12 h-12 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 text-lg"><i class="fa-solid fa-droplet"></i></div>
+        <h3 class="font-extrabold text-[17px] mt-4">Pet Stains & Odor</h3>
+        <p class="text-sm text-slate-600 mt-2 leading-relaxed">Enzyme + UV inspection finds what you can't see. We neutralize, not mask.</p>
+        <div class="mt-4 flex gap-2 text-xs font-bold"><span class="bg-red-50 text-red-700 px-2.5 py-1 rounded-full">Blacklight inspection</span><span class="bg-slate-100 px-2.5 py-1 rounded-full">Enzyme flush</span></div>
+        <a href="#estimate" class="inline-flex items-center gap-2 text-brand font-extrabold text-sm mt-4">Add for <span data-price="addon_pet" class="ml-1">$49</span> <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </div>
+      <div class="group bg-white border border-slate-100 rounded-[24px] p-6 hover:shadow-card hover:border-blue-100 transition">
+        <div class="w-12 h-12 bg-violet-50 rounded-2xl flex items-center justify-center text-violet-600 text-lg"><i class="fa-solid fa-building"></i></div>
+        <h3 class="font-extrabold text-[17px] mt-4">Commercial & Rentals</h3>
+        <p class="text-sm text-slate-600 mt-2 leading-relaxed">After-hours, fast-dry service for offices, rentals & move-outs. Invoices & W9 ready.</p>
+        <div class="mt-4 flex gap-2 text-xs font-bold"><span class="bg-violet-50 text-violet-700 px-2.5 py-1 rounded-full">Weekend slots</span><span class="bg-slate-100 px-2.5 py-1 rounded-full">Bulk pricing</span></div>
+      </div>
+      <div class="bg-navy rounded-[24px] p-6 text-white flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full"></div>
+        <div>
+          <div class="w-12 h-12 bg-white/15 rounded-2xl flex items-center justify-center text-xl"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3 class="font-black text-[20px] leading-tight mt-4">Need stain<br>guard or repairs?</h3>
+          <p class="text-white/70 text-sm mt-2">Add Scotchgard™, deodorizer, or carpet patching to any job.</p>
+        </div>
+        <a href="#contact" class="mt-6 bg-white text-navy font-extrabold py-3 rounded-full text-center">Ask for Add-Ons →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Equipment Spotlight -->
+<section id="equipment" class="bg-navy text-white py-14 lg:py-20 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-[#0A58FF]/20 to-transparent"></div>
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-6 relative">
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div class="order-2 lg:order-1">
+        <div class="bg-white rounded-[26px] p-2.5 shadow-2xl">
+          <div class="rounded-[18px] overflow-hidden bg-slate-100">
+            <img src="images/truck-mount-unit.jpg" width="830" height="824" alt="Close up of truck mount unit" class="w-full h-[420px] object-cover object-center">
+          </div>
+          <div class="grid grid-cols-3 gap-2.5 mt-2.5">
+            <div class="bg-slate-900 text-white rounded-2xl p-3 text-center">
+              <div class="text-[11px] font-bold opacity-60">WATER TEMP</div>
+              <div class="font-black">220°F</div>
+              <div class="w-full bg-white/20 h-1 rounded-full mt-1"><div class="bg-brand h-1 rounded-full w-[92%]"></div></div>
+            </div>
+            <div class="bg-brand rounded-2xl p-3 text-center text-white">
+              <div class="text-[11px] font-bold opacity-80">PRESSURE</div>
+              <div class="font-black">500 PSI</div>
+              <div class="text-[11px] font-bold">Adjustable</div>
+            </div>
+            <div class="bg-amber-400 rounded-2xl p-3 text-center text-navy">
+              <div class="text-[11px] font-black opacity-70">VACUUM</div>
+              <div class="font-black">4000 CFM</div>
+              <div class="text-[11px] font-bold">Dual Wand Ready</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-xs font-black tracking-widest"><i class="fa-solid fa-wrench text-amber-400"></i> MEET THE BEAST</div>
+        <h2 class="display text-[36px] lg:text-[44px] font-black mt-4 leading-[0.95]">Not All Cleaners<br>Are Built Equal.</h2>
+        <p class="text-white/70 mt-4 leading-relaxed">Most rentals & portables push dirty water around. Our <span class="text-white font-bold">blue Kohler-powered truck-mount</span> — the one in the photo — lives on the truck, heats to 220°F, and pulls soil straight to a waste tank outside your home. No buckets in your sink.</p>
+        <div class="grid sm:grid-cols-2 gap-5 mt-8">
+          <div class="flex gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white text-navy flex items-center justify-center shrink-0"><i class="fa-solid fa-fire text-sm"></i></div>
+            <div><div class="font-extrabold text-sm">True Steam</div><div class="text-sm text-white/60 leading-tight">Heat breaks grease & kills bacteria on contact</div></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white text-navy flex items-center justify-center shrink-0"><i class="fa-solid fa-wind text-sm"></i></div>
+            <div><div class="font-extrabold text-sm">Power Vacuum</div><div class="text-sm text-white/60 leading-tight">27" Hg lift extracts 95% moisture</div></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white text-navy flex items-center justify-center shrink-0"><i class="fa-solid fa-recycle text-sm"></i></div>
+            <div><div class="font-extrabold text-sm">Fresh Water Always</div><div class="text-sm text-white/60 leading-tight">Never reuses dirty water</div></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white text-navy flex items-center justify-center shrink-0"><i class="fa-solid fa-soap text-sm"></i></div>
+            <div><div class="font-extrabold text-sm">Residue-Free Rinse</div><div class="text-sm text-white/60 leading-tight">Stays cleaner longer</div></div>
+          </div>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#contact" class="bg-white text-navy font-extrabold px-6 py-3 rounded-full">See It In Action — Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="py-12 bg-white border-y border-slate-100">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-6">
+    <div class="grid lg:grid-cols-4 gap-6">
+      <div class="lg:col-span-1">
+        <div class="text-brand font-black text-xs tracking-widest">HOW IT WORKS</div>
+        <h3 class="display text-[28px] font-black mt-1 leading-none">48 Hours to<br>Fresh Floors</h3>
+        <p class="text-sm text-slate-600 mt-3">Simple scheduling. No pushy upsells. Just clean.</p>
+      </div>
+      <div class="lg:col-span-3 grid sm:grid-cols-3 gap-5">
+        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-100 relative">
+          <div class="w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center font-black text-sm">1</div>
+          <h4 class="font-extrabold mt-3">Quote in 60 Seconds</h4>
+          <p class="text-sm text-slate-600 mt-1">Tell us rooms & fabrics. Instant price, firm on-site.</p>
+          <i class="fa-solid fa-calculator absolute top-5 right-5 text-slate-300"></i>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-100 relative">
+          <div class="w-8 h-8 bg-brand text-white rounded-full flex items-center justify-center font-black text-sm">2</div>
+          <h4 class="font-extrabold mt-3">We Come Prepared</h4>
+          <p class="text-sm text-slate-600 mt-1">Truck parks outside. Hoses in, soil out. Furniture moved.</p>
+          <i class="fa-solid fa-truck absolute top-5 right-5 text-slate-300"></i>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-100 relative">
+          <div class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-black text-sm">3</div>
+          <h4 class="font-extrabold mt-3">Walk & Wow</h4>
+          <p class="text-sm text-slate-600 mt-1">Inspect together. Pay only if you love it. Dry fast.</p>
+          <i class="fa-solid fa-broom absolute top-5 right-5 text-slate-300"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing + Calculator. Every price on this page is filled in by js/site.js
+     from the price book (Supabase), with the numbers below as the fallback. -->
+<section id="pricing" class="py-14 lg:py-20 bg-[#F8FAFC]">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-6">
+    <div class="text-center max-w-2xl mx-auto">
+      <div class="inline-flex bg-white border border-slate-200 rounded-full px-4 py-1.5 text-xs font-black tracking-widest text-brand">TRANSPARENT PRICING</div>
+      <h2 class="display text-[36px] lg:text-[44px] font-black mt-3">Pay For Rooms, Not<br>Hidden Fees.</h2>
+      <p class="text-slate-600 mt-3">Every price includes pre-spray, agitation, steam extraction, deodorizer and moving furniture. Packages use the same prices as the calculator, so picking one just fills it in for you.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 mt-10 items-start">
+      <!-- Packages -->
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="bg-white rounded-[24px] border border-slate-200 p-6">
+          <div class="text-xs font-black tracking-widest text-slate-500">ESSENTIAL</div>
+          <div class="text-[28px] font-black mt-1" data-pkg-price="pkg_essential">$144</div>
+          <div class="text-xs font-bold text-slate-500 -mt-1" data-pkg-summary="pkg_essential">3 rooms + hallway</div>
+          <ul class="mt-5 space-y-2 text-sm">
+            <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1 text-xs" aria-hidden="true"></i> Truck-mount steam</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1 text-xs" aria-hidden="true"></i> Pre-spray &amp; rinse</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1 text-xs" aria-hidden="true"></i> Deodorizer</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1 text-xs" aria-hidden="true"></i> <span><span data-pkg-warranty="pkg_essential">14</span>-day re-clean guarantee</span></li>
+            <li class="flex gap-2 text-slate-400"><i class="fa-solid fa-xmark mt-1 text-xs" aria-hidden="true"></i> No Scotchgard</li>
+          </ul>
+          <button type="button" data-package="pkg_essential" aria-pressed="false" class="w-full mt-6 border-2 border-slate-900 font-extrabold py-3 rounded-full hover:bg-slate-900 hover:text-white transition">Choose Essential</button>
+        </div>
+        <div class="bg-navy text-white rounded-[24px] p-6 relative shadow-xl">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-navy text-xs font-black px-3 py-1 rounded-full whitespace-nowrap">MOST POPULAR</div>
+          <div class="text-xs font-black tracking-widest text-white/60">DEEP CLEAN</div>
+          <div class="text-[28px] font-black mt-1" data-pkg-price="pkg_deep">$268</div>
+          <div class="text-xs font-bold text-white/60 -mt-1" data-pkg-summary="pkg_deep">5 rooms + hallway + stairs + scotchgard</div>
+          <ul class="mt-5 space-y-2 text-sm">
+            <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1 text-xs" aria-hidden="true"></i> Everything in Essential</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1 text-xs" aria-hidden="true"></i> Stairs included</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1 text-xs" aria-hidden="true"></i> Scotchgard protection</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1 text-xs" aria-hidden="true"></i> <span><span data-pkg-warranty="pkg_deep">14</span>-day re-clean guarantee</span></li>
+          </ul>
+          <button type="button" data-package="pkg_deep" aria-pressed="false" class="w-full mt-6 bg-brand hover:bg-brand-dark text-white font-extrabold py-3 rounded-full transition">Choose Deep Clean</button>
+        </div>
+        <div class="bg-white rounded-[24px] border border-slate-200 p-6">
+          <div class="text-xs font-black tracking-widest text-slate-500">PLATINUM</div>
+          <div class="text-[28px] font-black mt-1" data-pkg-price="pkg_platinum">$362</div>
+          <div class="text-xs font-bold text-slate-500 -mt-1" data-pkg-summary="pkg_platinum">8 rooms + hallway + sofa or loveseat + scotchgard</div>
+          <ul class="mt-5 space-y-2 text-sm">
+            <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1 text-xs" aria-hidden="true"></i> Up to 8 rooms + hallway</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1 text-xs" aria-hidden="true"></i> Sofa or loveseat</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1 text-xs" aria-hidden="true"></i> Scotchgard protection</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1 text-xs" aria-hidden="true"></i> <span><span data-pkg-warranty="pkg_platinum">30</span>-day re-clean guarantee</span></li>
+          </ul>
+          <button type="button" data-package="pkg_platinum" aria-pressed="false" class="w-full mt-6 border-2 border-slate-900 font-extrabold py-3 rounded-full hover:bg-slate-900 hover:text-white transition">Choose Platinum</button>
+        </div>
+      </div>
+
+      <!-- Calculator -->
+      <div id="estimate" class="bg-white rounded-[28px] border border-slate-200 p-6 lg:p-7 shadow-card lg:sticky lg:top-24 scroll-mt-24">
+        <div class="flex items-center justify-between gap-3">
+          <h3 class="font-black text-lg">Instant Estimate</h3>
+          <span class="bg-emerald-50 text-emerald-700 text-xs font-black px-3 py-1 rounded-full">No email required</span>
+        </div>
+        <p class="text-sm text-slate-600 mt-1">Set it to match your home. The price updates as you go.</p>
+
+        <div class="mt-6">
+          <div class="flex justify-between text-sm font-bold"><label for="calcRooms">Rooms to clean</label><span id="roomCount" class="text-brand">3 rooms</span></div>
+          <input id="calcRooms" type="range" min="0" max="8" value="3" class="w-full mt-2">
+          <div class="flex justify-between text-xs text-slate-500 mt-1"><span>0</span><span>First room <span data-price="room_first">$79</span>, then <span data-price="room_additional">$20</span> each</span><span>8</span></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 mt-5">
+          <label for="calc_addon_hall" class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-3 cursor-pointer hover:border-brand/30">
+            <input type="checkbox" id="calc_addon_hall" data-addon="addon_hall" class="w-4 h-4 rounded"> <span class="text-sm font-semibold">Hallway <span class="text-slate-500" data-price="addon_hall" data-prefix="+">+$25</span></span>
+          </label>
+          <label for="calc_addon_stairs" class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-3 cursor-pointer hover:border-brand/30">
+            <input type="checkbox" id="calc_addon_stairs" data-addon="addon_stairs" class="w-4 h-4 rounded"> <span class="text-sm font-semibold">Stairs <span class="text-slate-500" data-price="addon_stairs" data-prefix="+">+$45</span></span>
+          </label>
+          <label for="calc_addon_pet" class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-3 cursor-pointer hover:border-brand/30">
+            <input type="checkbox" id="calc_addon_pet" data-addon="addon_pet" class="w-4 h-4 rounded"> <span class="text-sm font-semibold">Pet treatment <span class="text-slate-500" data-price="addon_pet" data-prefix="+">+$49</span></span>
+          </label>
+          <label for="calc_addon_scotchgard" class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-3 cursor-pointer hover:border-brand/30">
+            <input type="checkbox" id="calc_addon_scotchgard" data-addon="addon_scotchgard" class="w-4 h-4 rounded"> <span class="text-sm font-semibold">Scotchgard <span class="text-slate-500" data-price="addon_scotchgard" data-prefix="+">+$39</span></span>
+          </label>
+          <label for="calc_addon_sofa" class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-3 cursor-pointer hover:border-brand/30 col-span-2">
+            <input type="checkbox" id="calc_addon_sofa" data-addon="addon_sofa" class="w-4 h-4 rounded"> <span class="text-sm font-semibold">Sofa or loveseat <span class="text-slate-500" data-price="addon_sofa" data-prefix="+">+$79</span></span>
+          </label>
+        </div>
+
+        <div class="bg-navy text-white rounded-2xl p-5 mt-6 flex items-center justify-between gap-4" aria-live="polite">
+          <div>
+            <div class="text-xs font-bold opacity-60 tracking-widest">ESTIMATED TOTAL</div>
+            <div id="calcTotal" class="text-[32px] font-black leading-none mt-1">$119</div>
+            <div id="calcOnline" class="text-xs text-amber-300 font-bold mt-1" hidden></div>
+          </div>
+          <div class="text-right text-xs">
+            <div class="bg-white/15 px-3 py-1 rounded-full font-bold">Before tax</div>
+            <div class="mt-2 opacity-70">Final price confirmed on site</div>
+          </div>
+        </div>
+        <a href="#contact" class="block text-center bg-brand hover:bg-brand-dark text-white font-extrabold py-4 rounded-full mt-4 transition">Book This Estimate →</a>
+        <p class="text-center text-xs text-slate-500 mt-2">Or call <a href="tel:5552348765" class="font-bold text-brand">(555) 234-8765</a> for same-day</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-14 bg-white">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-6 grid lg:grid-cols-[0.9fr_1.1fr] gap-10">
+    <div>
+      <div class="text-brand font-black text-xs tracking-widest">FAQ • NO SURPRISES</div>
+      <h2 class="display text-[32px] font-black mt-2">We Answer<br>Before You Ask.</h2>
+      <p class="text-slate-600 mt-3">Straight answers. If it's not here, text Richard directly.</p>
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center gap-3 mt-6">
+        <div class="w-10 h-10 bg-emerald-500 text-white rounded-full flex items-center justify-center"><i class="fa-solid fa-comment-dots"></i></div>
+        <div><div class="font-extrabold text-sm">Text Richard</div><div class="text-xs text-slate-600">(555) 234-8765</div></div>
+        <a href="sms:5552348765" class="ml-auto bg-white border px-4 py-2 rounded-full font-bold text-sm">Text Now</a>
+      </div>
+    </div>
+    <div class="space-y-3" id="faq">
+      <div class="border border-slate-200 rounded-2xl overflow-hidden">
+        <button type="button" aria-expanded="false" class="faqBtn w-full flex items-center justify-between p-5 font-bold text-left">How long until carpet is dry? <i class="fa-solid fa-plus text-slate-400"></i></button>
+        <div class="faqPanel hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed">With our truck-mount vacuum (27" lift), most carpets are dry in 2–4 hours. We groom the pile and set air movers if needed. Portables often leave carpets wet for 24+ hours — we don't.</div>
+      </div>
+      <div class="border border-slate-200 rounded-2xl overflow-hidden">
+        <button type="button" aria-expanded="false" class="faqBtn w-full flex items-center justify-between p-5 font-bold text-left">Do you move furniture? <i class="fa-solid fa-plus text-slate-400"></i></button>
+        <div class="faqPanel hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed">Yes — sofas, tables, chairs. We place protective tabs under legs and move everything back. You only need to clear breakables and electronics.</div>
+      </div>
+      <div class="border border-slate-200 rounded-2xl overflow-hidden">
+        <button type="button" aria-expanded="false" class="faqBtn w-full flex items-center justify-between p-5 font-bold text-left">Are chemicals safe for kids & pets? <i class="fa-solid fa-plus text-slate-400"></i></button>
+        <div class="faqPanel hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed">We use low-residue cleaning solutions. Safe once dry (about 2 hours). We include a free deodorizer; enzyme pet treatment is extra but pet-safe.</div>
+      </div>
+      <div class="border border-slate-200 rounded-2xl overflow-hidden">
+        <button type="button" aria-expanded="false" class="faqBtn w-full flex items-center justify-between p-5 font-bold text-left">What's your guarantee? <i class="fa-solid fa-plus text-slate-400"></i></button>
+        <div class="faqPanel hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed">Love it or we re-clean free within 14 days (30 days on Platinum). If we can't remove a stain, we tell you before we start — no charge for that area.</div>
+      </div>
+      <div class="border border-slate-200 rounded-2xl overflow-hidden">
+        <button type="button" aria-expanded="false" class="faqBtn w-full flex items-center justify-between p-5 font-bold text-left">Do I need to provide water or power? <i class="fa-solid fa-plus text-slate-400"></i></button>
+        <div class="faqPanel hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed">No. The blue unit is completely self-contained on the truck — fresh water tank, waste tank, and Kohler engine. We just need driveway access.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact / Booking -->
+<section id="contact" class="py-14 lg:py-20 bg-[#F8FAFC]">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-6">
+    <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-8">
+      <div class="bg-navy text-white rounded-[28px] p-6 lg:p-8 relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-72 h-72 bg-white/10 rounded-full"></div>
+        <div class="relative">
+          <div class="inline-flex bg-white/15 rounded-full px-3 py-1 text-xs font-black tracking-widest" data-if-promo>BOOK ONLINE &amp; SAVE&nbsp;<span data-promo-amount>$15</span></div>
+          <h2 class="display text-[32px] lg:text-[38px] font-black mt-3 leading-none">Get Your Firm<br>Quote Today.</h2>
+          <p class="text-white/70 mt-3">Your request goes straight to Richard's phone, and he calls or texts back to confirm a time. Prefer to talk?</p>
+          <a href="tel:5552348765" class="mt-4 inline-flex items-center gap-3 bg-white text-navy font-extrabold px-6 py-3 rounded-full"><i class="fa-solid fa-phone"></i> (555) 234-8765</a>
+
+          <div class="mt-8 grid grid-cols-2 gap-4">
+            <div class="bg-white/10 rounded-2xl p-4">
+              <div class="text-amber-300"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="font-extrabold text-sm mt-2">Service Area</div>
+              <div class="text-sm text-white/70">Metro + 30 mile radius<br>Same-day in most zones</div>
+            </div>
+            <div class="bg-white/10 rounded-2xl p-4">
+              <div class="text-emerald-300"><i class="fa-solid fa-clock"></i></div>
+              <div class="font-extrabold text-sm mt-2">Hours</div>
+              <div class="text-sm text-white/70">Mon-Sat 7am–7pm<br>Sun emergency only</div>
+            </div>
+          </div>
+
+          <div class="mt-6 bg-white rounded-2xl p-3 flex items-center gap-3 text-navy">
+            <div class="w-12 h-12 rounded-full bg-brand text-white flex items-center justify-center font-black text-lg" aria-hidden="true">R</div>
+            <div>
+              <div class="font-extrabold text-sm">Richard, owner/operator</div>
+              <div class="text-xs text-slate-600">Reads every request himself</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form id="bookingForm" novalidate class="bg-white rounded-[28px] border border-slate-200 p-6 lg:p-8 shadow-card scroll-mt-24">
+        <div class="flex items-center justify-between">
+          <h3 class="font-black text-xl">Book Your Cleaning</h3>
+          <span class="text-xs font-bold text-slate-500">Takes about a minute</span>
+        </div>
+        <div id="formStatus" role="alert" hidden></div>
+        <div class="grid sm:grid-cols-2 gap-4 mt-6">
+          <div>
+            <label for="fName" class="text-xs font-bold text-slate-700">Full name *</label>
+            <input id="fName" autocomplete="name" placeholder="Jane Doe" class="w-full mt-1 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand">
+            <p class="text-xs text-red-600 mt-1" data-error-for="name" hidden></p>
+          </div>
+          <div>
+            <label for="fPhone" class="text-xs font-bold text-slate-700">Mobile phone *</label>
+            <input id="fPhone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(713) 555-0142" class="w-full mt-1 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand">
+            <p class="text-xs text-red-600 mt-1" data-error-for="phone" hidden></p>
+          </div>
+          <div>
+            <label for="fEmail" class="text-xs font-bold text-slate-700">Email <span class="font-normal text-slate-500">(for your copy of the quote)</span></label>
+            <input id="fEmail" type="email" autocomplete="email" placeholder="jane@email.com" class="w-full mt-1 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand">
+            <p class="text-xs text-red-600 mt-1" data-error-for="email" hidden></p>
+          </div>
+          <div>
+            <label for="fService" class="text-xs font-bold text-slate-700">Service *</label>
+            <select id="fService" class="w-full mt-1 border border-slate-200 rounded-xl px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand">
+              <option value="carpet">Carpet cleaning</option>
+              <option value="upholstery">Upholstery / sofa</option>
+              <option value="pet">Pet treatment + carpet</option>
+              <option value="tile">Tile &amp; grout</option>
+              <option value="commercial">Commercial / rental</option>
+            </select>
+            <p class="text-xs text-red-600 mt-1" data-error-for="service" hidden></p>
+          </div>
+          <div>
+            <label for="fAddress" class="text-xs font-bold text-slate-700">Street address *</label>
+            <input id="fAddress" autocomplete="street-address" placeholder="123 Main St" class="w-full mt-1 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand">
+            <p class="text-xs text-red-600 mt-1" data-error-for="address" hidden></p>
+          </div>
+          <div>
+            <label for="fZip" class="text-xs font-bold text-slate-700">ZIP *</label>
+            <input id="fZip" autocomplete="postal-code" inputmode="numeric" maxlength="5" placeholder="77004" class="w-full mt-1 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand">
+            <p class="text-xs text-red-600 mt-1" data-error-for="zip" hidden></p>
+          </div>
+          <div>
+            <label for="fDate" class="text-xs font-bold text-slate-700">Preferred date *</label>
+            <input id="fDate" type="date" class="w-full mt-1 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand">
+            <p class="text-xs text-red-600 mt-1" data-error-for="preferredDate" hidden></p>
+          </div>
+          <div>
+            <label for="fPromo" class="text-xs font-bold text-slate-700">Promo code</label>
+            <input id="fPromo" autocapitalize="characters" class="w-full mt-1 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand">
+            <p class="text-xs text-red-600 mt-1" data-error-for="promo" hidden></p>
+          </div>
+          <div class="sm:col-span-2 bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-start justify-between gap-3">
+            <div>
+              <div class="text-xs font-bold text-slate-700">Your estimate</div>
+              <div id="formEstimateText" class="text-sm font-semibold mt-0.5" aria-live="polite">3 rooms: $119 before tax.</div>
+              <p class="text-xs text-red-600 mt-1" data-error-for="rooms" hidden></p>
+            </div>
+            <a href="#estimate" class="text-sm font-bold text-brand whitespace-nowrap">Change</a>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="fNotes" class="text-xs font-bold text-slate-700">Anything Richard should know?</label>
+            <textarea id="fNotes" rows="2" placeholder="Pets, stains, fabric type, gate code..." class="w-full mt-1 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand"></textarea>
+            <p class="text-xs text-red-600 mt-1" data-error-for="notes" hidden></p>
+          </div>
+          <div class="hidden" aria-hidden="true">
+            <label for="fWebsite">Leave this empty</label>
+            <input id="fWebsite" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="sm:col-span-2">
+            <!-- Changing this sentence? Bump CONSENT_TEXT_VERSION in supabase/functions/_shared/validate.js. -->
+            <label for="fConsent" class="flex items-start gap-2 text-xs text-slate-600"><input type="checkbox" id="fConsent" class="mt-0.5 w-4 h-4"> <span>I agree that Richard's Carpet Cleaning may call or text me about this quote. Message and data rates may apply. Reply STOP to opt out. See the <a href="privacy.html" class="underline">privacy policy</a>.</span></label>
+            <p class="text-xs text-red-600 mt-1" data-error-for="consent" hidden></p>
+          </div>
+          <div id="turnstile" class="sm:col-span-2"></div>
+        </div>
+        <button type="submit" class="w-full bg-brand hover:bg-brand-dark disabled:opacity-70 text-white font-black py-4 rounded-full mt-6 shadow-soft transition flex items-center justify-center gap-2"><span id="submitText">Send My Quote Request</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        <p class="text-center text-xs text-slate-500 mt-3">No obligation. Richard confirms the final price on site before any work starts.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-navy text-white pt-12 pb-8">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-6">
+    <div class="grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-brand rounded-xl flex items-center justify-center font-black">R</div>
+          <div class="leading-none"><div class="font-black">RICHARD'S</div><div class="text-xs tracking-widest text-white/60">CARPET CLEANING</div></div>
+        </div>
+        <p class="text-sm text-white/60 mt-4 leading-relaxed">Truck-mount steam cleaning for carpet, upholstery and tile. We don't cut corners. We extract them.</p>
+        <!-- Add social links here once Richard's accounts exist. -->
+      </div>
+      <div>
+        <div class="font-black text-sm tracking-widest">SERVICES</div>
+        <ul class="mt-4 space-y-2 text-sm text-white/70">
+          <li><a href="#services" class="hover:text-white">Carpet Cleaning</a></li>
+          <li><a href="#services" class="hover:text-white">Upholstery & Mattresses</a></li>
+          <li><a href="#services" class="hover:text-white">Tile & Grout</a></li>
+          <li><a href="#services" class="hover:text-white">Pet Odor Treatment</a></li>
+          <li><a href="#services" class="hover:text-white">Commercial</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-black text-sm tracking-widest">CONTACT</div>
+        <ul class="mt-4 space-y-2 text-sm text-white/70">
+          <li class="flex gap-2"><i class="fa-solid fa-phone mt-1 text-brand"></i> (555) 234-8765</li>
+          <li class="flex gap-2"><i class="fa-solid fa-envelope mt-1 text-brand"></i> hello@richardscarpet.com</li>
+          <li class="flex gap-2"><i class="fa-solid fa-location-dot mt-1 text-brand"></i> 1842 Industrial Pkwy<br>Metro, ST 74008</li>
+        </ul>
+      </div>
+      <div class="bg-white text-navy rounded-2xl p-5" data-if-promo>
+        <div class="font-black">Get <span data-promo-amount>$15</span> Off</div>
+        <div class="text-sm text-slate-600">Book online with code <span class="font-black text-brand" data-promo-code>BLUE15</span>. It's filled in for you.</div>
+        <a href="#contact" class="block text-center bg-navy text-white font-bold py-2.5 rounded-full mt-3">Book Online</a>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-10 pt-6 flex flex-wrap items-center justify-between gap-3 text-xs text-white/50">
+      <div>© 2026 Richard's Carpet Cleaning &amp; Upholstery</div>
+      <div class="flex gap-5"><a href="privacy.html" class="hover:text-white">Privacy</a><a href="terms.html" class="hover:text-white">Terms</a><a href="terms.html#guarantee" class="hover:text-white">Guarantee</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast: only shown after the server confirms the request was saved -->
+<div id="toast" role="status" hidden class="fixed bottom-5 right-5 bg-navy text-white px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3 z-50 max-w-[92vw]">
+  <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center shrink-0"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
+  <div>
+    <div class="font-black text-sm">Quote request sent</div>
+    <div id="toastText" class="text-sm text-white/70"></div>
+  </div>
+  <button id="toastClose" type="button" aria-label="Close" class="ml-2 w-11 h-11 text-white/60 hover:text-white"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+</div>
+
+<script src="js/config.js"></script>
+<script type="module" src="js/site.js"></script>
+</body>
+</html>

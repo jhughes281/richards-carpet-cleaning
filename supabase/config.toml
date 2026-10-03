@@ -1,0 +1,14 @@
+# Minimal Supabase CLI config. `supabase link` fills in the rest.
+project_id = "richards-carpet-cleaning"
+
+# These functions are called by the public website and by Twilio, which
+# don't carry a Supabase JWT. Each one does its own checks instead
+# (CORS allow-list, Turnstile, rate limit, Twilio signature).
+[functions.price-book]
+verify_jwt = false
+
+[functions.submit-quote]
+verify_jwt = false
+
+[functions.twilio-inbound]
+verify_jwt = false
