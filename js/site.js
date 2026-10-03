@@ -132,6 +132,12 @@ fService.addEventListener('change', () => {
 });
 $('#fPromo').addEventListener('input', updateFormEstimate);
 
+// "Get a quote" links on service cards preselect that service in the form.
+$$('[data-service]').forEach((a) => a.addEventListener('click', () => {
+  fService.value = a.dataset.service;
+  fService.dispatchEvent(new Event('change'));
+}));
+
 // ---------- booking form ----------
 
 const form = $('#bookingForm');

@@ -2,7 +2,7 @@
 // code runs in the Deno edge function and in the Node tests.
 
 import { quote, describeSelection, formatUSD, MAX_ROOMS, ESTIMABLE_SERVICES } from './pricing.js';
-import { validateQuoteRequest, localDate, formatPhone, SERVICES } from './validate.js';
+import { validateQuoteRequest, localDate, formatPhone, SERVICES, URGENT_SERVICES } from './validate.js';
 
 async function sha256Hex(text) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
@@ -18,7 +18,8 @@ export function ownerSms(v, est, book, inArea) {
   const price = est ? `est ${formatUSD(est.total_cents)}${est.promo_code ? ` (${est.promo_code})` : ''}` : 'no estimate';
   const area = inArea === false ? ' OUTSIDE SERVICE AREA.' : '';
   const notes = v.notes ? ` Notes: ${v.notes.slice(0, 160)}` : '';
-  return `New quote: ${v.name} ${formatPhone(v.phone)}, ${v.zip}.${area} ${SERVICES[v.service]}: ${sel}, ${price}. Wants ${prettyDate(v.preferredDate)}.${notes}`;
+  const lead = URGENT_SERVICES.includes(v.service) ? 'URGENT ' : '';
+  return `${lead}New quote: ${v.name} ${formatPhone(v.phone)}, ${v.zip}.${area} ${SERVICES[v.service]}: ${sel}, ${price}. Wants ${prettyDate(v.preferredDate)}.${notes}`;
 }
 
 export function customerEmail(v, est, env) {

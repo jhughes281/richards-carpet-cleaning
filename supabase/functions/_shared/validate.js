@@ -6,7 +6,16 @@ export const SERVICES = {
   tile: 'Tile & grout',
   pet: 'Pet treatment + carpet',
   commercial: 'Commercial / rental',
+  rug: 'Area rugs',
+  mattress: 'Mattresses',
+  water: 'Water extraction',
+  repair: 'Carpet repair / re-stretching',
+  auto: 'Auto, RV & boat interiors',
+  leather: 'Leather furniture',
 };
+
+// Services Richard should hear about right away.
+export const URGENT_SERVICES = ['water'];
 
 // Bump when the consent sentence on the form changes, so every stored
 // consent points at the exact wording the customer saw.

@@ -12,6 +12,15 @@
 - Packages are now plain presets with no bundle discount: Essential $144, Deep Clean $268, Platinum $362
 - Online promo BLUE15 = $15 off, with no end date set. The old "Expires end of month" line was removed.
 
+## Added services: does Richard offer each one? (all "priced on site" for now)
+Added Oct 3 2026 without input from Richard. Remove any he doesn't do. To give one a price, add a `price_book` row and a calculator option.
+- **Area rugs**: cleaned in place, wool-safe, fringe grooming
+- **Mattresses**: hot-water extraction, both sides
+- **Water extraction**: standing water from carpet and pad, emergency calls. Requests are flagged URGENT in his text. The page claims extraction only, not drying, mold or insurance work.
+- **Carpet repair & re-stretching**: power stretching, seams, patches from remnant
+- **Auto, RV & boat interiors**: hoses run from the truck in the driveway
+- **Leather furniture**: hand clean and condition, no steam
+
 ## Claims to verify (kept on the page for now)
 - Equipment specs: Kohler 14HP, 500 PSI, 220°F, 4000 CFM, 27" Hg. Is the photo his actual unit?
 - "Dry in 2–4 hours", "Eco-friendly / kid & pet safe", "low-residue solutions"

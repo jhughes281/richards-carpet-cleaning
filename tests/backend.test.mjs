@@ -213,3 +213,32 @@ test('opt keywords', () => {
   assert.equal(optKeyword('Start'), 'in');
   assert.equal(optKeyword('stop texting me pls'), null);
 });
+
+// ---------- services ----------
+
+test('latest SQL service check matches SERVICES in validate.js', async () => {
+  const { SERVICES } = await import('../supabase/functions/_shared/validate.js');
+  const dir = new URL('../supabase/migrations/', import.meta.url);
+  const files = readdirSync(dir).sort();
+  let list = null;
+  for (const f of files) {
+    const sql = readFileSync(new URL(f, dir), 'utf8');
+    const m = [...sql.matchAll(/service\s+in\s*\(([^)]*)\)/g)].pop();
+    if (m) list = [...m[1].matchAll(/'(\w+)'/g)].map((x) => x[1]);
+  }
+  assert.deepEqual([...list].sort(), Object.keys(SERVICES).sort());
+});
+
+test('water extraction is saved without an estimate and flagged URGENT to Richard', async () => {
+  const { deps, saved, sent } = fakeDeps();
+  const res = await handleSubmitQuote({ ...GOOD, service: 'water', rooms: 0, addons: [], package: null }, { ip: 'x' }, deps);
+  assert.equal(res.status, 200);
+  assert.equal(saved[0].quote.est_total_cents, null);
+  assert.match(sent[0].body, /^URGENT New quote: .* Water extraction: price on site, no estimate\./);
+});
+
+test('every new service validates with nothing selected in the calculator', () => {
+  for (const service of ['rug', 'mattress', 'repair', 'auto', 'leather']) {
+    assert.deepEqual(validateQuoteRequest({ ...GOOD, service, rooms: 0, addons: [], package: null }, CTX).errors, {}, service);
+  }
+});
