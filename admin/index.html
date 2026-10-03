@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#08132E">
+<title>Richard's Inbox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="back" id="backLink" href="#leads" hidden>‹ Back</a>
+  <h1 id="screenTitle">Richard's Inbox</h1>
+  <button type="button" class="icon-btn" id="refreshBtn" aria-label="Refresh">↻</button>
+</header>
+<div id="demoBanner" class="demo-banner" hidden>Demo mode: sample data only, nothing is saved.</div>
+<div id="errorBanner" class="error-banner" role="alert" hidden></div>
+<main id="app" aria-live="polite"><p class="muted pad">Loading…</p></main>
+<div id="toast" class="toast" role="status" hidden></div>
+<nav class="tabbar" id="tabbar" aria-label="Screens" hidden>
+  <a href="#leads" data-tab="leads">Leads<span class="badge" id="newBadge" hidden></span></a>
+  <a href="#today" data-tab="today">Today</a>
+  <a href="#week" data-tab="week">Week</a>
+  <a href="#setup" data-tab="setup">Setup</a>
+</nav>
+<script src="config.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

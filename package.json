@@ -1,0 +1,12 @@
+{
+  "name": "richards-carpet-cleaning",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/*.test.mjs\"",
+    "mock": "node tests/mock-functions.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.0"
+  }
+}

@@ -18,8 +18,10 @@ prices, and the form tells people to call instead of pretending to send.
 | `supabase/functions/_shared/validate.js` | Form rules, used by the browser and the server |
 | `supabase/functions/_shared/quote-handler.js` | submit-quote logic (dependency-injected, tested in Node) |
 | `supabase/functions/{price-book,submit-quote,twilio-inbound}/` | Edge function entry points (Deno) |
-| `tests/backend.test.mjs` | `node --test tests/backend.test.mjs` (23 tests) |
+| `tests/backend.test.mjs` | Pricing, validation, submit-quote flow |
 | `tests/mock-functions.mjs` | Local fake backend for testing the site without Supabase |
+| `admin/` | **Richard's Inbox** (phase 2): leads, Today, Week, job screen, crew & trucks |
+| `tests/sql.test.mjs`, `tests/admin.test.mjs` | Migrations + RLS on real Postgres (PGlite), admin logic |
 
 ## 1. Supabase (free tier)
 
@@ -93,11 +95,49 @@ turnstileSiteKey: '0x...',   // public site key, not the secret
 - Turnstile: Cloudflare dashboard → Turnstile → add the site's hostname.
   The site key goes in `config.js`, and the secret goes in `TURNSTILE_SECRET`.
 
-## Where Richard sees leads (until phase 2)
+## 7. Richard's Inbox (phase 2 admin)
 
-Supabase dashboard → Table editor → **`lead_inbox`** view: newest first, with
-name, phone, address, selections, estimate and notes on one row. He changes
-`status` on `quote_requests` as he works each lead.
+The inbox lives at `/admin/`, e.g. `https://jhughes281.github.io/richards-carpet-cleaning/admin/`.
+It isn't linked from the public site. Richard signs in with an emailed link,
+with no password.
+
+1. `supabase db push` again, to apply `20261003000300_phase2_admin_jobs.sql`.
+2. **Authentication → Users → Add user** with Richard's email. (Sign-up stays
+   off: the login form only sends links to existing users.)
+3. Make him an admin in the SQL editor:
+   ```sql
+   insert into public.admins (user_id, email)
+   select id, email from auth.users where email = 'richard@...';
+   ```
+4. **Authentication → URL Configuration**: set Site URL to the admin URL and
+   add it to Redirect URLs. Without this, the sign-in link sends him to the
+   wrong place.
+5. Fill in `admin/config.js` with the project URL and the **anon** key
+   (Project settings → API). The anon key is meant to be public. RLS hides every
+   row unless the signed-in user is in `admins`.
+6. **Recommended:** Supabase's built-in email only sends a few sign-in emails
+   per hour. Set Authentication → SMTP to Resend (same account as step 6
+   above) so the links always arrive.
+7. In the inbox, open **Setup** and add Richard as crew and his truck(s).
+
+What it does:
+- **Leads:** New / Working / Booked / Closed. New leads untouched for 30+ minutes,
+  and every water-extraction request, get a red flag and float to the top.
+  Each lead has Call, Text and Map buttons, its online estimate, and Book a job
+  (with a warning if that truck or crew is already in the slot).
+- **Booking** copies the online estimate into the job's line items
+  (`book_quote()`), so the firm price starts from what the customer saw.
+- **Job:** change, add or remove lines on site. Any change from the online quote
+  needs a reason, and removals are logged in the job notes. Start → Mark complete
+  stamps the job and starts the 14- or 30-day re-clean guarantee (`complete_job()`).
+- **Today / Week:** jobs by time window, with access notes. Double-booked trucks
+  or crews are flagged.
+
+Try it without Supabase: open `http://localhost:8762/admin/?demo` (sample data,
+resets on reload, localhost only).
+
+Until the inbox is set up, Richard can still read leads in the Supabase table
+editor: the **`lead_inbox`** view lists newest first.
 
 ## Changing prices
 
